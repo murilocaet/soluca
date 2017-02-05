@@ -41,6 +41,8 @@ ARQUITETURA DO SISTEMA
 
 1.6.7.	junit-4.12
 
+
+
 2	Construção do “FRON-END” + Cliente
 
 2.1.	Linguagem AngularJs
@@ -50,6 +52,7 @@ ARQUITETURA DO SISTEMA
 2.2.1.	angularJs-1.5.8
 
 2.2.2.	bootstrap- 3.3.7
+
 
 
 3	Protocolo para troca de mensagens WebService/Cliente
@@ -170,10 +173,15 @@ O sistema ficou bem intuitivo e com apenas duas telas consumindo o Webservice!
     para a URL do webservice, passando o JSON. A resposta é um JSON contendo o roteiro das entregas.
 2.1.	Caminho do serviço de ROTAS: “.../services/rotas/obterRotas”
 2.2.	Layout JSON de resposta
+
 				{"erros":[
+
 				{"mensagem":"texto1"},
+
 				{"mensagem":"texto2"}],"rotas":[
+
 				{"id":"1","origem":"A","destino":"D","descricao":"A B D", "km":"25.0","autonomia":"10.0","custoMedio":"6.25","roteiro":"","mapa":{"nome":"BA"}},
+
 				{"id":"2","origem":"A","destino":"C","descricao":"A C", "km":"20.0","autonomia":"10.0","custoMedio":"5.0","roteiro":"","mapa":{"nome":"BA"}}]}
 
 
