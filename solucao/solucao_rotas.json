@@ -5,5 +5,5 @@
 {"nome":"SP","rotas":[
 {"origem":"A","destino":"D","km":"10.0","custoMedio":"2.5"},
 {"origem":"A","destino":"B","km":"10.0","custoMedio":"2.5"},
-{"origem":"C","destino":"D","km":"30.0","custoMedio":"2.5"}]}
+{"origem":"C","destino":"D","km":"10.0","custoMedio":"2.5"}]}
 ]}
