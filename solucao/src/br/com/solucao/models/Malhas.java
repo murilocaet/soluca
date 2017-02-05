@@ -1,5 +1,6 @@
 package br.com.solucao.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -24,7 +25,7 @@ public class Malhas {
 	/**
 	 * Atributo malhas
 	 */
-	private List<Malha> malhas;
+	private List<Malha> malhas = new ArrayList<Malha>();
 	
 	/**
     * Construtor da Classe.
