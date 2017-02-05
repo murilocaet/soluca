@@ -171,12 +171,12 @@ O sistema ficou bem intuitivo e com apenas duas telas consumindo o Webservice!
 1	A tela MAPAS é utilizada para fazer a carga da malha de mapas no sistema, ou se preferir, pode ser enviada de outra aplicação para 
     a URL do webservice, passando o JSON.
     
-1.1.	Caminho do serviço de MAPAS: “.../services/malhas/carregarMalhas
+1.1.	Caminho do serviço de MAPAS: "<b>.../services/malhas/carregarMalhas</b>"
 
 2	A tela ROTAS é utilizada para fazer a carga do destino das entregas no sistema, ou se preferir, pode ser enviada de outra aplicação 
     para a URL do webservice, passando o JSON. A resposta é um JSON contendo o roteiro das entregas.
     
-2.1.	Caminho do serviço de ROTAS: “.../services/rotas/obterRotas”
+2.1.	Caminho do serviço de ROTAS: "<b>.../services/rotas/obterRotas</b>"
 2.2.	Layout JSON de resposta
 
 				{"erros":[
