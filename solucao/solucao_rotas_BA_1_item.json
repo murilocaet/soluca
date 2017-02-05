@@ -1,3 +1,5 @@
 {"malhas":[
-{"nome":"BA","rotas":[{"origem":"A","destino":"D","km":"10.0","custoMedio":"2.5"}]}
+{"nome":"BA","rotas":[
+{"origem":"A","destino":"D","km":"10.0","custoMedio":"2.5"},
+{"origem":"M","destino":"Y","km":"10.0","custoMedio":"2.5"}]}
 ]}
