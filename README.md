@@ -18,14 +18,23 @@ ARQUITETURA DO SISTEMA
 1.1.	Linguagem JAVA
 
 1.2.	Eclipse IDE
+
 1.3.	Tomcat 7
+
 1.4.	jre1.8.0_121
+
 1.5.	Projeto Dynamic Web Module 3.0
+
 1.6.	LIBS
+
 1.6.1.	jersey-1.19.1
+
 1.6.2.	jackson-1.9.2
+
 1.6.3.	jettison-1.1
+
 1.6.4.	asm-3.1
+
 1.6.5.	jsr311-1.1.1
 
 2.	Construção do “FRON-END” + Cliente
