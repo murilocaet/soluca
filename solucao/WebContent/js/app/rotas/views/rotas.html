@@ -43,7 +43,7 @@
             </div>
         </div>
         
-        <div class="row" ng-if="errosProcessados != null || errosProcessados != undefined">
+        <div class="row" ng-if="errosProcessados != null  && errosProcessados.length > 0">
         	<div class="col-lg-12" style="text-align: left; margin-top: 15px;">
 	            <div class="panel panel-danger">
 					<div class="panel-heading">Erros</div>
@@ -62,6 +62,25 @@
 							<td>{{erro.mapa.nome}}</td>
 							<td align="left">{{erro.rotas.origem}}</td>
 							<td>{{erro.rotas.destino}}</td>
+						</tr>
+					</table>
+				</div>
+            </div>
+        </div>
+        
+        <div class="row" ng-if="errosload != null && errosload.length > 0">
+        	<div class="col-lg-12" style="text-align: left; margin-top: 15px;">
+	            <div class="panel panel-danger">
+					<div class="panel-heading">Erros</div>
+					
+					<table class="table">
+						<tr> 
+							<th>#</th>
+							<th>Mensagem</th>
+						</tr>
+						<tr ng-repeat="erro in errosload">						       
+							<td>{{$index+1}}</td>
+							<td>{{erro.mensagem}}</td>
 						</tr>
 					</table>
 				</div>
@@ -92,15 +111,6 @@
 						</tr>
 					</table>
 				</div>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-12" style="text-align: left;">
-                <h1>Pendências da Tela</h1>
-                <p style="text-align: left;">
-	                Concluir a implementação dos testes automatizados!
-                </p>
             </div>
         </div>
         
