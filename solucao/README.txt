@@ -13,7 +13,7 @@ veículo (em Km), custo médio e receberá o roteiro que deve seguir.
 ***********************
 ARQUITETURA DO SISTEMA
 ***********************
-1	<b>Construção do “BACK-END” + WebService</b>
+1	Construção do “BACK-END” + WebService
 
 1.1.	Linguagem JAVA
 
@@ -43,7 +43,7 @@ ARQUITETURA DO SISTEMA
 
 
 
-2	<b>Construção do “FRON-END” + Cliente</b>
+2	Construção do “FRON-END” + Cliente
 
 2.1.	Linguagem AngularJs
 
@@ -55,7 +55,7 @@ ARQUITETURA DO SISTEMA
 
 
 
-3	<b>Protocolo para troca de mensagens WebService/Cliente</b>
+3	Protocolo para troca de mensagens WebService/Cliente
 
 3.1.	JSON
 
@@ -153,11 +153,11 @@ INSTRUÇÕES SOBRE CONFIGURAÇÃO/INSTALAÇÃO NO ECLIPSE
 ****************************************************
 Existem duas formas de configurar este sistema, segue abaixo:
 
-1	<b>Criação de um novo projeto JAVA Dynamic Web Module 3.0;</b>
+1	Criação de um novo projeto JAVA Dynamic Web Module 3.0;
 
 1.1.	Substituição das pastas ‘src’ e ‘WebContent’ pelas pastas correspondentes que foram baixadas do repositório;
 
-2	<b>Copiar a pasta do projeto no ‘workspace’ do eclipse;</b>
+2	Copiar a pasta do projeto no ‘workspace’ do eclipse;
 
 2.1.	Importar projeto existente no workspace;
 
@@ -171,12 +171,12 @@ O sistema ficou bem intuitivo e com apenas duas telas consumindo o Webservice!
 1	A tela MAPAS é utilizada para fazer a carga da malha de mapas no sistema, ou se preferir, pode ser enviada de outra aplicação para 
     a URL do webservice, passando o JSON.
     
-1.1.	Caminho do serviço de MAPAS: "<b>.../services/malhas/carregarMalhas</b>"
+1.1.	Caminho do serviço de MAPAS: ".../services/malhas/carregarMalhas"
 
 2	A tela ROTAS é utilizada para fazer a carga do destino das entregas no sistema, ou se preferir, pode ser enviada de outra aplicação 
     para a URL do webservice, passando o JSON. A resposta é um JSON contendo o roteiro das entregas.
     
-2.1.	Caminho do serviço de ROTAS: "<b>.../services/rotas/obterRotas</b>"
+2.1.	Caminho do serviço de ROTAS: ".../services/rotas/obterRotas"
 
 2.2.	Layout JSON de resposta
 
