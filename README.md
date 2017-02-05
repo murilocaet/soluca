@@ -37,55 +37,105 @@ ARQUITETURA DO SISTEMA
 
 1.6.5.	jsr311-1.1.1
 
-2.	Construção do “FRON-END” + Cliente
+1.6.6.	hamcrest-core-1.3
+
+1.6.7.	junit-4.12
+
+2	Construção do “FRON-END” + Cliente
+
 2.1.	Linguagem AngularJs
+
 2.2.	LIBS
+
 2.2.1.	angularJs-1.5.8
+
 2.2.2.	bootstrap- 3.3.7
 
-3.	Protocolo para troca de mensagens WebService/Cliente
+
+3	Protocolo para troca de mensagens WebService/Cliente
+
 3.1.	JSON
+
 3.1.1.	Layout das malhas para o Webservice
+
 3.1.1.1.	Mapa
+
 				{"malhas":[
+
 				{"nome":"BA","rotas":[
+
 				{"origem":"A","destino":"B","km":"10.0"},
+
 				{"origem":"B","destino":"D","km":"15.0"}, 
+
 				{"origem":"A","destino":"C","km":"20.0"},
+
 				{"origem":"C","destino":"D","km":"30.0"}, 
+
 				{"origem":"B","destino":"E","km":"50.0"}, 
+
 				{"origem":"D","destino":"E","km":"30.0"}]},
+
 				{"nome":"SP","rotas":[
+
 				{"origem":"A","destino":"B","km":"10.0"},
+
 				{"origem":"B","destino":"D","km":"15.0"}, 
+
 				{"origem":"A","destino":"C","km":"20.0"},
+
 				{"origem":"C","destino":"D","km":"30.0"}, 
+
 				{"origem":"B","destino":"E","km":"50.0"}, 
+
 				{"origem":"D","destino":"E","km":"30.0"}]},
+
 				{...},
+
 				{...}
+
 				]}
 
 3.1.1.2.	Rotas
+
 				{"malhas":[
+
 				{"nome":"BA","rotas":[
+
 				{"origem":"A","destino":"D","km":"10.0","custoMedio":"2.5"},
+
 				{"origem":"A","destino":"B","km":"10.0","custoMedio":"2.5"},
+
 				{"origem":"B","destino":"D","km":"15.0","custoMedio":"2.5"}, 
+
 				{"origem":"A","destino":"C","km":"20.0","custoMedio":"2.5"},
+
 				{"origem":"C","destino":"D","km":"30.0","custoMedio":"2.5"}, 
+
 				{"origem":"B","destino":"E","km":"50.0","custoMedio":"2.5"}, 
+
 				{"origem":"D","destino":"E","km":"30.0","custoMedio":"2.5"}]},
+
 				{"nome":"SP","rotas":[
+
 				{"origem":"A","destino":"D","km":"10.0","custoMedio":"2.5"},
+
 				{"origem":"A","destino":"B","km":"10.0","custoMedio":"2.5"},
+
 				{"origem":"B","destino":"D","km":"15.0","custoMedio":"2.5"}, 
+
 				{"origem":"A","destino":"C","km":"20.0","custoMedio":"2.5"},
+
 				{"origem":"C","destino":"D","km":"30.0","custoMedio":"2.5"}, 
+
 				{"origem":"B","destino":"E","km":"50.0","custoMedio":"2.5"}, 
+
 				{"origem":"D","destino":"E","km":"30.0","custoMedio":"2.5"}]},
+
 				{...},
+
 				{...}
+
 				]}
 
 
