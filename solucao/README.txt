@@ -25,6 +25,8 @@ ARQUITETURA DO SISTEMA
 1.6.3.	jettison-1.1
 1.6.4.	asm-3.1
 1.6.5.	jsr311-1.1.1
+1.6.6.	hamcrest-core-1.3
+1.6.7.	junit-4.12
 
 2.	Construção do “FRON-END” + Cliente
 2.1.	Linguagem AngularJs
