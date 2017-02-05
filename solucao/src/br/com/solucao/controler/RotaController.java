@@ -21,7 +21,7 @@ import br.com.solucao.models.Rotas;
  * <li>processar(Malha malha, Distribuicao distribuicao)
  * <li>processarRotas(Malha malha)
  * <li>calcularRotaMaisCurta(Rotas rotas)
- * <li>encontrarDestino(Localizacao localizacao, Rotas rotas, List<String> localizacaoRemovida)
+ * <li>encontrarDestino(Localizacao localizacao, Rotas rotas)
  * <li>compararCaminhos()
  * </ul>
  * 
@@ -78,8 +78,9 @@ public interface RotaController {
 	 * Processa todos os destino e retorna todas as rotas possíveis.
 	 *
 	 * @param malha the malha to load Malha.
+	 * @param rotas the rotas to load Rotas.
 	 */
-	public void encontrarDestino(Localizacao localizacao, Rotas rotas, List<String> localizacaoRemovida);
+	public void encontrarDestino(Localizacao localizacao, Rotas rotas);
 	
 	/**
 	 * Processa todas as rotas possíveis e retorna a melhor rota de cada destino.

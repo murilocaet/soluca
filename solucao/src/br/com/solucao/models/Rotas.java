@@ -1,5 +1,8 @@
 package br.com.solucao.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -17,6 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * <li>autonomia Double
  * <li>custoMedio Double
  * <li>descricao String
+ * <li>caminho List String
  * <li>roteiro StringBuilder
  * </ul>
  * 
@@ -68,6 +72,11 @@ public class Rotas {
 	private String descricao = "";
 	
 	/**
+	 * Atributo caminho
+	 */
+	private List<String> caminho = new ArrayList<String>();
+	
+	/**
 	 * Atributo roteiro
 	 */
 	private StringBuilder roteiro = new StringBuilder();
@@ -93,6 +102,7 @@ public class Rotas {
 		this.mapa = mapa;
 		this.origem = origem;
 		this.destino = destino;
+		this.getCaminho().add(origem);
 	}
 	
 	/**
@@ -111,6 +121,7 @@ public class Rotas {
 		this.destino = destino;
 		this.autonomia = autonomia;
 		this.custoMedio = custoMedio;
+		this.getCaminho().add(origem);
 	}
 	
 	/**
@@ -127,6 +138,7 @@ public class Rotas {
 		this.origem = origem;
 		this.destino = destino;
 		this.km = km;
+		this.getCaminho().add(origem);
 	}
 
 	/**
@@ -326,6 +338,26 @@ public class Rotas {
 		this.roteiro.append(" ");
 		this.roteiro.append(localizacao);
 	}
+	
+	
+
+	/**
+	 * Retorna o caminho.
+	 * 
+	 * @return the caminho
+	 */
+	public List<String> getCaminho() {
+		return caminho;
+	}
+
+	/**
+	 * Seta o caminho.
+	 * 
+	 * @param caminho the caminho to set
+	 */
+	public void setCaminho(List<String> caminho) {
+		this.caminho = caminho;
+	}
 
 	/**
 	 * Clona uma Rota.
@@ -342,6 +374,7 @@ public class Rotas {
 		novaRotas.setCustoMedio(this.getCustoMedio());
 		novaRotas.setMapa(this.getMapa());
 		novaRotas.setDescricao(this.getDescricao());
+		novaRotas.getCaminho().addAll(this.getCaminho());
 		novaRotas.setRoteiro(new StringBuilder(this.getRoteiro().toString()));
 		
 		return novaRotas;

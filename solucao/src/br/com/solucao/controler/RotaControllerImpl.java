@@ -27,7 +27,7 @@ import br.com.solucao.util.SolucaoUtil;
  * <li>processar(Malha malha, Distribuicao distribuicao)
  * <li>processarRotas(Malha malha)
  * <li>calcularRotaMaisCurta(Rotas rotas)
- * <li>encontrarDestino(Localizacao localizacao, Rotas rotas, List<String> localizacaoRemovida)
+ * <li>encontrarDestino(Localizacao localizacao, Rotas rotas)
  * <li>compararCaminhos()
  * </ul>
  * 
@@ -158,7 +158,6 @@ public class RotaControllerImpl implements RotaController{
 		Mapa mapa = SolucaoUtil.mapas.get(rotas.getMapa().getNome());
 		Map<String, Localizacao> localizacoes = mapa.getLocalizacoes();
 		Localizacao localizacao = localizacoes.get(rotas.getOrigem());
-		List<String> localizacaoRemovida = new ArrayList<String>();
 		Rotas copy = null;
 		
 		rotas.setRoteiro(new StringBuilder(rotas.getOrigem()));
@@ -169,7 +168,6 @@ public class RotaControllerImpl implements RotaController{
 		rotas.setMapa(mapaNovo);
 		
 		if(localizacao.getMapLocalizacao().size() > 0) {
-			localizacaoRemovida.add(rotas.getOrigem());
 			for (Localizacao l : localizacao.getMapLocalizacao().values()) {
 				copy = rotas.clonar();
 				copy.addRoteiro(l.getNome());
@@ -178,7 +176,7 @@ public class RotaControllerImpl implements RotaController{
 				if(l.getNome().equalsIgnoreCase(rotas.getDestino())) {
 					salvarRoteito(copy);
 				}else {
-					encontrarDestino(l, copy, localizacaoRemovida);
+					encontrarDestino(l, copy);
 				}
 			}
 		}
@@ -187,13 +185,15 @@ public class RotaControllerImpl implements RotaController{
 	}
 	
 	/* (non-Javadoc)
-	 * @see br.com.solucao.controler.RotaController#encontrarDestino(br.com.solucao.models.Localizacao, br.com.solucao.models.Rotas, java.util.List)
+	 * @see br.com.solucao.controler.RotaController#encontrarDestino(br.com.solucao.models.Localizacao, br.com.solucao.models.Rotas)
 	 */
-	public void encontrarDestino(Localizacao localizacao, Rotas rotas, List<String> localizacaoRemovida) {
+	public void encontrarDestino(Localizacao localizacao, Rotas rotas) {
 		Rotas copy = null;
 		for (Localizacao l : localizacao.getMapLocalizacao().values()) {
-			if(!localizacaoRemovida.contains(l.getNome())) {
-				localizacaoRemovida.add(localizacao.getNome());
+			if(!rotas.getCaminho().contains(l.getNome())) {
+				if(!rotas.getCaminho().contains(localizacao.getNome())) {
+					rotas.getCaminho().add(localizacao.getNome());
+				}
 				copy = rotas.clonar();
 				copy.addRoteiro(l.getNome());
 				copy.somaKm(localizacao.getMapKm().get(l.getId()));
@@ -202,7 +202,7 @@ public class RotaControllerImpl implements RotaController{
 					salvarRoteito(copy);
 				}
 				else {
-					encontrarDestino(l, copy, localizacaoRemovida);
+					encontrarDestino(l, copy);
 				}
 			}
 		}
