@@ -177,6 +177,7 @@ O sistema ficou bem intuitivo e com apenas duas telas consumindo o Webservice!
     para a URL do webservice, passando o JSON. A resposta é um JSON contendo o roteiro das entregas.
     
 2.1.	Caminho do serviço de ROTAS: "<b>.../services/rotas/obterRotas</b>"
+
 2.2.	Layout JSON de resposta
 
 				{"erros":[
