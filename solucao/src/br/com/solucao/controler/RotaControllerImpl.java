@@ -108,6 +108,7 @@ public class RotaControllerImpl implements RotaController{
 	public List<Erro> processarRotas(Malha malha) {
 		Rotas rotas = null;
 		Mapa mapa = null;
+		Mapa mapaNovo = null;
 		List<Erro> erros = new ArrayList<Erro>();
 		Erro erro = null;
 		Boolean rotaValida = Boolean.TRUE;
@@ -129,12 +130,19 @@ public class RotaControllerImpl implements RotaController{
 				
 				rotaValida = Boolean.TRUE;
 				if(mapa.getLocalizacoes().get(rota.getOrigem()) == null) {
-					erro = new Erro(new Rotas(mapa,rota.getOrigem(),rota.getDestino()), Constantes.LOCALIZA플O_ORIGEM_NAO_ENCONTRADO);
+					mapaNovo = new Mapa();
+					mapaNovo.setId(mapa.getId());
+					mapaNovo.setNome(mapa.getNome());
+					rotas.setMapa(mapaNovo);
+					erro = new Erro(new Rotas(mapaNovo,rota.getOrigem(),rota.getDestino()), Constantes.LOCALIZA플O_ORIGEM_NAO_ENCONTRADO);
 					erros.add(erro);
 					rotaValida = Boolean.FALSE;
 				}
 				if(mapa.getLocalizacoes().get(rota.getDestino()) == null) {
-					erro = new Erro(new Rotas(mapa,rota.getOrigem(),rota.getDestino()), Constantes.LOCALIZA플O_DESTINO_NAO_ENCONTRADO);
+					mapaNovo = new Mapa();
+					mapaNovo.setId(mapa.getId());
+					mapaNovo.setNome(mapa.getNome());
+					erro = new Erro(new Rotas(mapaNovo,rota.getOrigem(),rota.getDestino()), Constantes.LOCALIZA플O_DESTINO_NAO_ENCONTRADO);
 					erros.add(erro);
 					rotaValida = Boolean.FALSE;
 				}
